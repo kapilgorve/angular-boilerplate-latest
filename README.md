@@ -7,7 +7,7 @@ Install nodemon on your system.
 
 $ git clone https://github.com/kapilgorve/angularjs-boilerplate.git
 
-$cd angularjs-angularjs-boilerplate
+$cd angularjs-boilerplate
 
 $ npm install
 
