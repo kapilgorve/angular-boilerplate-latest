@@ -5,6 +5,10 @@ VSCode task setup.
 $npm install -g nodemon   
 Install nodemon on your system.
 
+$ git clone https://github.com/kapilgorve/angularjs-boilerplate.git
+
+$cd angularjs-angularjs-boilerplate
+
 $ npm install
 
 $ npm start
