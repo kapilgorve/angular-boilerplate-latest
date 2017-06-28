@@ -1,4 +1,4 @@
-Ready to deply Heroku starter app for AngularJs applications.
+Ready to deploy Heroku starter app for AngularJs applications.
 This is configured with scss auto compilation with watch ,js angular app files compilation to bundle.js,
 VSCode task setup.
 
