@@ -2,6 +2,8 @@ Ready to deploy Heroku starter app for AngularJs applications.
 This is configured with scss auto compilation with watch ,js angular app files compilation to bundle.js,
 VSCode task setup.
 
+Comes with latest AngularJs,UI-Router,Bootstrap3,Lodash,Font Awesome.
+
 $npm install -g nodemon   
 Install nodemon on your system.
 
