@@ -4,6 +4,10 @@ VSCode task setup.
 
 Comes with latest AngularJs,UI-Router,Bootstrap3,Lodash,Font Awesome.
 
+Strict annotation is enabled with ng-strict-di directive , so  explicitly annotate the function using either the inline bracket notation, or with the $inject property.
+
+
+
 $npm install -g nodemon   
 Install nodemon on your system.
 
