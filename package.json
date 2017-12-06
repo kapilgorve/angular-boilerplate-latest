@@ -11,21 +11,17 @@
     "push-all": "git push  origin master && git push heroku master "
   },
   "dependencies": {
-    "angular": "^1.6.7",
-    "angular-ui-router": "1.0.3",
     "body-parser": "^1.17.1",
     "compression": "^1.7.1",
     "express": "^4.13.3",
-    "gulp-gzip": "^1.4.0",
-    "jquery": "1.9.1"
+    "gulp-gzip": "^1.4.0"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
+  "keywords": ["node", "heroku", "express"],
   "license": "",
   "devDependencies": {
+    "angular": "^1.6.7",
+    "angular-ui-router": "1.0.3",
+    "jquery": "1.9.1",
     "@types/angular": "^1.6.7",
     "@types/jquery": "^2.0.40",
     "autoprefixer": "^7.2.1",
