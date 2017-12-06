@@ -7,24 +7,25 @@ var babel = require('gulp-babel');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
+var gzip = require('gulp-gzip');
 
-gulp.task('sass', function() {
-  return (gulp
-      .src('public/scss/**/*.scss')
+gulp.task('sass', () => {
+  gulp
+    .src('public/scss/**/*.scss')
 
-      .pipe(sass())
-      //.pipe(concat('css/*.css'))
-      .pipe(sourcemaps.init())
-      .pipe(postcss([autoprefixer()]))
-      .pipe(sourcemaps.write('.'))
-      .on('error', function(err) {
-        gutil.log(gutil.colors.red('[Error]'), err.toString());
-      })
-      .pipe(gulp.dest('public/css/')) );
+    .pipe(sass())
+    //.pipe(concat('css/*.css'))
+    .pipe(sourcemaps.init())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('.'))
+    .on('error', function(err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString());
+    })
+    .pipe(gulp.dest('public/css/'));
 });
 
-gulp.task('scripts', function() {
-  return gulp
+gulp.task('scripts', () => {
+  gulp
     .src('public/app/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel())
@@ -37,7 +38,19 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('default', ['sass', 'scripts'], function() {
+gulp.task('vendor-copy', () => {
+  var vendors = [
+    './node_modules/jquery/jquery.min.js',
+    './node_modules/angular/angular.min.js',
+    './node_modules/angular-ui-router/release/angular-ui-router.min.js'
+  ];
+  return gulp
+    .src(vendors)
+    .pipe(concat('bundle.js'))
+    .pipe(gzip())
+    .pipe(gulp.dest('public/vendor'));
+});
+gulp.task('default', ['vendor-copy', 'sass', 'scripts'], function() {
   gulp.watch('public/scss/**/*.scss', ['sass']);
   gulp.watch('public/app/**/*.js', ['scripts']);
 });
