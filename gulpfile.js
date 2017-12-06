@@ -26,14 +26,15 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
   return gulp
     .src('public/app/**/*.js')
-    .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('public/'))
+    .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
+    .pipe(concat('bundle.js'))
+    .pipe(sourcemaps.write('./maps'))
     .on('error', function(err) {
       gutil.log(gutil.colors.red('[Error]'), err.toString());
     })
-    .pipe(gulp.dest('public/'));
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('default', ['sass', 'scripts'], function() {
