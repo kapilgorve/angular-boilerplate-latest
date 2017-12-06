@@ -47,6 +47,7 @@ gulp.task('vendor-copy', () => {
   return gulp
     .src(vendors)
     .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('public/vendor'))
     .pipe(gzip())
     .pipe(gulp.dest('public/vendor'));
 });
